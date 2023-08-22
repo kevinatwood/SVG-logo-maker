@@ -1,0 +1,6 @@
+
+<svg width = "300" height = "200">
+    <circle r = "100" cx = "150" cy = "100" fill="white"/>
+    <text x = "150" y = "100" text-anchor="middle" font-size="50" fill="pink">ABC</text>
+</svg>
+        
