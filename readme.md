@@ -24,6 +24,8 @@ npm i to install inquirer and jest. Requires the user to use the command line to
 
 Use the command node index.js in the command line to start the project. npm install is required before operation. Type in the command line to answer the prompts to create your SVG. Examples are provided in the repository. 
 
+[Link to walkthrough video](./SVG-logo-maker-walkthrough.mp4)
+
 ## Contributing
 
 Contribute to the GitHub Repo

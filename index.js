@@ -1,4 +1,4 @@
-// TODO: Import Shapes
+//  Import Shapes
 const inquirer = require("inquirer")
 const fs = require("fs")
 const MaxLengthInputPrompt = require('inquirer-maxlength-input-prompt')
@@ -8,7 +8,7 @@ const {Circle, Triangle, Square} = require("./lib/shape");
 const SVG = require("./lib/svg");
 const {Text, TriangleText} = require("./lib/text");
 
-// Todo: make prompts
+// User prompts
 inquirer .prompt([
     {
         type: "maxlength-input",
@@ -33,7 +33,7 @@ inquirer .prompt([
         message: "Enter a color keyword or the color's hexadecimal number for the shape's color"
     }
 ])
-// TODO: Make write to file function
+// Render SVG 
 .then((response) => {
     let newText;
     let newShape;
@@ -49,7 +49,6 @@ inquirer .prompt([
         newText = new TriangleText(response.characters, response.charColors);
     }
     const newSVG = new SVG(newShape, newText)
-    console.log(newSVG.render())
     fs.writeFile("logo.svg", newSVG.render(), (err) =>
     err ? console.log(err) : console.log('Successfully created SVG!'));
 
