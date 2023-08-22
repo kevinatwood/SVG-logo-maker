@@ -19,7 +19,7 @@ inquirer .prompt([
     {
         type:"input",
         name: "charColors",
-        message: "Enter a color keyword or the color's hexadecimal number"
+        message: "Enter a color keyword or the color's hexadecimal number for the logo text"
     },
     {
         type: "list",
@@ -30,7 +30,7 @@ inquirer .prompt([
     {
         type: "input",
         name: "shapeColor",
-        message: "Enter a color keyword or the color's hexadecimal number"
+        message: "Enter a color keyword or the color's hexadecimal number for the shape's color"
     }
 ])
 // TODO: Make write to file function
