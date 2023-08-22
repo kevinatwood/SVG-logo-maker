@@ -6,7 +6,7 @@ inquirer.registerPrompt('maxlength-input', MaxLengthInputPrompt)
 
 const {Circle, Triangle, Square} = require("./lib/shape");
 const SVG = require("./lib/svg");
-const Text = require("./lib/text");
+const {Text, TriangleText} = require("./lib/text");
 
 // Todo: make prompts
 inquirer .prompt([
@@ -33,16 +33,20 @@ inquirer .prompt([
         message: "Enter a color keyword or the color's hexadecimal number"
     }
 ])
+// TODO: Make write to file function
 .then((response) => {
-    const newText = new Text(response.characters, response.charColors);
+    let newText;
     let newShape;
 
     if (response.shape == "square"){
         newShape = new Square(response.shapeColor)
+        newText = new Text(response.characters, response.charColors);
     } else if (response.shape == "circle"){
         newShape = new Circle(response.shapeColor)
+        newText = new Text(response.characters, response.charColors);
     } else {
         newShape = new Triangle (response.shapeColor)
+        newText = new TriangleText(response.characters, response.charColors);
     }
     const newSVG = new SVG(newShape, newText)
     console.log(newSVG.render())
@@ -51,4 +55,3 @@ inquirer .prompt([
 
 })
 
-// TODO: Make write to file function
